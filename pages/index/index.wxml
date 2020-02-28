@@ -1,8 +1,32 @@
 <view class="content">
+  <!-- 搜索框 -->
   <view class="search">
-    <view class="search_content">
-      <image src="../../images/icon_search@2x.png" mode="aspectFit"></image>
-      <text>搜索</text>
-    </view>
+    <navigator url="">
+      <view class="search_content">
+        <image src="../../images/icon_search@2x.png" mode="aspectFit"></image>
+        <text>搜索</text>
+      </view>
+    </navigator>
+  </view>
+  <!-- 轮播图 -->
+  <view class="page_swiper">
+
+    <swiper indicator-dots indicator-color="rgba(255, 255, 255, .3)" indicator-active-color="rgba(255,255,255,1)" class="page_swiper">
+      <block wx:for="{{banners}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.image_src}}" mode="aspectFit"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 导航栏菜单 -->
+  <view class="menus">
+        <block wx:for="{{menus}}" wx:key="index">
+        <navigator url="{{item.url}}" open-type="{{item.open_type}}">
+         <image src="{{item.image_src}}" mode="aspectFit"></image>
+        </navigator>
+           
+        </block> 
+        
   </view>
 </view>

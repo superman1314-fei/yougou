@@ -22,3 +22,21 @@
   font-size: 22rpx;
     color: #bcbbbc;
 }
+.page_swiper{
+  height: 340rpx;
+}
+.page_swiper image{
+   height: 340rpx;
+    width: 100%;
+}
+.menus{
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.menus image{
+  width: 128rpx;
+  height: 133rpx;
+}
