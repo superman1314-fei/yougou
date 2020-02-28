@@ -1,3 +1,8 @@
-<view>
-首页
+<view class="content">
+  <view class="search">
+    <view class="search_content">
+      <image src="../../images/icon_search@2x.png" mode="aspectFit"></image>
+      <text>搜索</text>
+    </view>
+  </view>
 </view>
