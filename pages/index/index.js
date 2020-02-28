@@ -7,7 +7,9 @@ Page({
     //导航菜单栏
     menus:[],
     //楼层
-    floors:[]
+    floors:[],
+    //回到顶部
+    isShowTop:false
 },
   onLoad() {
     request({
@@ -33,14 +35,38 @@ Page({
         menus: newData
       })
     })
+    //楼层请求数据
     request({
       url:"/home/floordata"
     }).then(res=>{
-      console.log(res)
       const{message} = res.data
       this.setData({
         floors: message
       })
+    })
+   
+  },
+  //小程序回到顶部
+   headTop() {
+     wx.pageScrollTo({
+       scrollTop: 0,
+       duration: 300
+     })
+  },
+  //监听回到顶部
+  onPageScroll(e){
+    const {scrollTop}= e
+    //当前状态
+    let isShow = this.data.isShowTop
+    if (scrollTop>100){
+      isShow=true
+    }else{
+      isShow=false
+    }
+    if (isShow==this.data.isShowTop) return
+    console.log(0)
+    this.setData({
+      isShowTop:isShow
     })
   }
 })
