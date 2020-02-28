@@ -21,12 +21,32 @@
   </view>
   <!-- 导航栏菜单 -->
   <view class="menus">
-        <block wx:for="{{menus}}" wx:key="index">
-        <navigator url="{{item.url}}" open-type="{{item.open_type}}">
-         <image src="{{item.image_src}}" mode="aspectFit"></image>
-        </navigator>
-           
-        </block> 
-        
+    <block wx:for="{{menus}}" wx:key="index">
+      <navigator url="{{item.url}}" open-type="{{item.open_type}}">
+        <image src="{{item.image_src}}" mode="aspectFit"></image>
+      </navigator>
+
+    </block>
+
   </view>
+  <!-- 楼层布局 -->
+  <view class="floor" wx:for="{{floors}}" wx:key="index">
+    <!-- 楼层头部 -->
+    <image src="{{item.floor_title.image_src}}" mode="aspectFit" class="floor_title"></image>
+    <view class="floor_content">
+      <!-- 左边图片 -->
+      <view class="floor_content_left">
+        <image src="{{item.product_list[0].image_src}}" mode="aspectFit"></image>
+      </view>
+      <!-- 右边图片 -->
+     
+      <view class="floor_content_right">
+       <block wx:for="{{item.product_list}}" wx:key="index" wx:if="{{index>0}}">
+        <image src="{{item.image_src}}" ></image>
+          </block>
+      </view>
+    
+    </view>
+  </view>
+
 </view>

@@ -40,3 +40,42 @@
   width: 128rpx;
   height: 133rpx;
 }
+.floor{
+  margin-bottom: 20rpx;
+}
+.floor_title{
+    height: 90rpx;
+    width: 100%;
+    background: #f4f4f4;
+}
+.floor_content{
+
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx;
+}
+.floor_content_left{
+  margin-right: 12rpx;
+}
+.floor_content_left image{
+   height: 386rpx;
+   width: 232rpx;
+   
+}
+.floor_content_right {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.floor_content_right image{
+   width: 233rpx;
+   height: 188rpx;
+  
+}
+.floor + .floor .floor_content_right image{
+  width: 193rpx;
+}
+.floor + .floor .floor_content_right image:nth-child(3n+1){
+  width: 273rpx;
+}

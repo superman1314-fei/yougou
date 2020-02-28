@@ -5,7 +5,9 @@ Page({
     //背景图
     banners: [],
     //导航菜单栏
-    menus:[]
+    menus:[],
+    //楼层
+    floors:[]
 },
   onLoad() {
     request({
@@ -21,7 +23,6 @@ Page({
       url:'/home/catitems'
     }).then(res=>{
       const {message} = res.data
-      console.log(res)
       const newData = message.map((v,i)=>{
         if(i===0){
           v.url="/pages/category/index"
@@ -30,6 +31,15 @@ Page({
       })
       this.setData({
         menus: newData
+      })
+    })
+    request({
+      url:"/home/floordata"
+    }).then(res=>{
+      console.log(res)
+      const{message} = res.data
+      this.setData({
+        floors: message
       })
     })
   }
