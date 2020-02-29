@@ -1,1 +1,73 @@
-/* pages/category/index.wxss */
+.container{
+  position: fixed;
+  top: 100rpx;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+
+}
+.container_left{
+  width: 195rpx;
+  height: 100%;
+  overflow: auto;
+  background: #f4f4f4;
+  flex-shrink: 0;
+}
+.content_left{
+  text-align: center;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.active{
+  background: #fff;
+  color: red;
+}
+.active::before{
+  display: block;
+  content:'';
+  width: 3px;
+  height: 20px;
+  background: red;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-8px);
+}
+/* 右边图片 */
+.container_right{
+  flex: 1;
+  overflow: auto;
+}
+
+.content_title{
+  text-align: center;
+  padding: 20rpx 0;
+  color: #ccc;
+}
+.content_title text{
+  padding: 0 10rpx;
+  color: #000;
+}
+.product_list{
+  display: flex;
+  width: 100%;
+  height: 100;
+  flex-wrap: wrap;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.product_list navigator{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+     width: 33.33%;
+      font-size: 13px;
+     overflow: hidden;
+     padding: 25rpx;
+     box-sizing: border-box;
+}
+.product_list navigator image{
+  width: 100%;
+}

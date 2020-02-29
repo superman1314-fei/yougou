@@ -58,13 +58,15 @@ Page({
     const {scrollTop}= e
     //当前状态
     let isShow = this.data.isShowTop
+    //大于100就显示回到顶部
     if (scrollTop>100){
       isShow=true
     }else{
       isShow=false
     }
+    //判断是否相同
     if (isShow==this.data.isShowTop) return
-    console.log(0)
+  //赋值
     this.setData({
       isShowTop:isShow
     })

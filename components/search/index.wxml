@@ -1,0 +1,9 @@
+  <!-- 搜索框 -->
+  <view class="search">
+    <navigator url="">
+      <view class="search_content">
+        <image src="../../images/icon_search@2x.png" mode="aspectFit"></image>
+        <text>搜索</text>
+      </view>
+    </navigator>
+  </view>
