@@ -22,3 +22,14 @@
   font-size: 22rpx;
     color: #bcbbbc;
 }
+.left{
+  justify-content: flex-start;
+  /* 商品列表 */
+  padding-left: 20rpx;
+}
+.center{
+  justify-content: center;
+}
+.right{
+  justify-content: flex-end;
+}

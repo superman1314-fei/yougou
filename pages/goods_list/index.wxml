@@ -1,5 +1,5 @@
 <view class="container">
-  <!-- 搜索栏 -->
+  <!-- 搜索栏
   <view class="search">
     <navigator url="/pages/search/index" open-type="navigate">
       <view class="search_content">
@@ -7,7 +7,10 @@
         <text>{{keyword}}</text>
       </view>
     </navigator>
-  </view>
+  </view> -->
+  <!-- 搜索栏 -->
+  <!--background是公共组件的背景样式   align 文字靠左 -->
+  <search keyword="{{keyword}}" background="search" align="left"/>
   <!-- 中间tap -->
   <view class="tap">
     <view wx:for="{{['综合','销量','价格']}}" wx:key="index" class="tap_item">
@@ -27,7 +30,12 @@
             <view class="price"><text>￥</text>{{item.goods_price}}</view>
           </view>
       </navigator>
-
+    <!-- 回到顶部 -->
+      <view class="toTop" bindtap="headTop" wx:if="{{isShowTop}}"> 
+        <view class="arrow"></view>
+        <text>顶部</text>
+      </view>
+      <!-- 底部 -->
     </view>
       <view class="no_more">
         <text wx:if="{{showMore}}">加载中</text>

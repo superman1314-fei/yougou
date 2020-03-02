@@ -1,25 +1,8 @@
 .search {
   padding: 20rpx;
-  background: #ccc;
+  background: #ccc !important;
 }
 
-.search_content {
-  height: 61rpx;
-  width: 100%;
-  background: #fff;
-  border-radius: 4px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 20rpx;
-}
-
-.search_content image {
-  height: 33rpx;
-  width: 30rpx;
-  color: #bcbbbc;
-  padding-right: 13rpx;
-}
 
 .tap {
   height: 100rpx;
@@ -73,4 +56,26 @@
   text-align: center;
   background: rgb(187, 255, 0,0.1);
   font-size: 14px;
+}
+.toTop{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+   font-size: 12px;
+   position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.arrow{
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 1px solid #ff2d4a;
+  border-left: 1px solid #ff2d4a;
+  transform: rotate(45deg);
+  
 }

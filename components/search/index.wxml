@@ -1,10 +1,10 @@
   <!-- 搜索框 -->
   
-  <view class="search">
+  <view class="search background">
     <navigator url="/pages/search/index" open-type="navigate">
-     <view class="search_content">
+     <view class="search_content {{align}}">
 <image src="../../images/icon_search@2x.png" mode="aspectFit"></image>
-<text>搜索</text>
+<text>{{keyword}}</text>
 </view>
     </navigator>
   </view>
