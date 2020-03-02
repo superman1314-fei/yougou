@@ -4,7 +4,7 @@
     <navigator url="/pages/search/index" open-type="navigate">
       <view class="search_content">
         <image src="../../images/icon_search@2x.png" mode="aspectFit"></image>
-        <text>小米</text>
+        <text>{{keyword}}</text>
       </view>
     </navigator>
   </view>
@@ -20,7 +20,7 @@
     <view class="list">
       <navigator url="" class="goods_item">
       <!-- 图片 -->
-        <image src="https://img30.360buyimg.com/jdcms/s300x300_jfs/t1/97540/24/10503/315001/5e1bfc8eE646698bf/e90d958de117cd81.jpg">
+        <image src="https://img30.360buyimg.com/jdcms/s300x300_jfs/t1/97540/24/10503/315001/5e1bfc8eE646698bf/e90d958de117cd81.jpg" mode="aspectFill">
         </image>
           <view class="goods_item_right">
               <view class="goods_title">大头人 datouren 充电感应灯楼道小夜灯led人体感应灯卧室床头婴儿喂奶budasdasdasdasdasdasdsadasd  </view>          
