@@ -1,37 +1,49 @@
-<!-- 搜索框 -->
-<search/>
 <view class="container">
+    <!-- 引入搜索公共组件 -->
+    <search/>
+    
+    <!-- 内容部分 -->
+    <view class="content">
+        <!-- 左边的菜单 -->
+        
+        <scroll-view class="left" scroll-y>
+            <!-- 菜单的子选项 -->
+            <block wx:for="{{list}}" wx:key="index">
+                <view 
+                class="menu-item {{ current === index ? 'active' : '' }}" 
+                bindtap="handleClick" 
+                data-index="{{index}}">
+                    {{item.cat_name}}
+                </view>
+            </block>
+            </scroll-view>
+        
 
-  <!-- 左边 -->
-  <view class="container_left">
-    <block wx:for="{{list}}" wx:key="index">
-      <view class="content_left {{content==index?'active':''}}" bindtap="handelClick" data-index="{{index}}">
-        {{item.cat_name}}
-      </view>
-    </block>
-  </view>
-  <!-- 右边 -->
-  <view class="container_right">
-    <!-- 子分类 -->
-    <block wx:for="{{list[content].children}}" wx:key="index">
-      <view class="content_list">
-        <view class="content_title">
-          /
-          <text>{{item.cat_name}}</text>
-          /
-        </view>
-        <view class="product_list">
+        <!-- 右边的内容 -->
+        
+        <scroll-view class="right" scroll-top="{{scrollTop}}" scroll-y>
+            <!-- 子分类 -->
+            <block wx:for="{{ list[current].children }}" wx:key="index">
+                <view class="category-list">
+                    <view class="category-title">
+                        / <text>{{item.cat_name}}</text> /
+                    </view>
 
-          <!-- 品牌内容 -->
-          <block wx:for="{{item.children}}" wx:key="index">
-            <navigator url="">
-              <image src="{{item.cat_icon}}" mode="widthFix"></image>
-              <text>{{item.cat_name}}</text>
-            </navigator>
-          </block>
-        </view>
-
-      </view>
-    </block>
-  </view>
+                    <view class="product-list">
+                        <!-- 品牌分类列表 -->
+                        <block 
+                        wx:for="{{ item.children }}" 
+                        wx:key="index" 
+                        wx:for-item="subItem"
+                        wx:for-index="subIndex">
+                            <navigator url="">
+                                <image mode="aspectFill" src="{{ subItem.cat_icon }}"></image>
+                                <view>{{ subItem.cat_name }}</view>
+                            </navigator>
+                        </block>
+                    </view>
+                </view>
+            </block>
+       </scroll-view>
+    </view>
 </view>

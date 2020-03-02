@@ -1,0 +1,26 @@
+.search_top{
+  height:90rpx;
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  background: #ccc;
+  padding: 20rpx;
+}
+.search_top input{
+  flex: 1;
+  width: 530rpx;
+  height: 60rpx;
+  background: #fff;
+    margin-right: 20rpx;
+
+}
+.search_top button{
+  border-radius: 5px;
+  width: 158rpx !important;
+  height: 59rpx;
+  line-height: 32rpx;
+  font-size: 22rpx;
+  margin-right: 46rpx !important;
+
+}

@@ -1,0 +1,8 @@
+<view class="search_row" >
+     <view class="search_top">
+        <input placeholder="请输入你想要输入的商品">111</input>
+        <button>取消</button>
+     </view>
+
+
+</view>
