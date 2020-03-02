@@ -17,14 +17,14 @@
     </view>
   </view>
 <!-- 商品列表 -->
-    <view class="list">
+    <view class="list" wx:for="{{goods}}" wx:key="index">
       <navigator url="" class="goods_item">
       <!-- 图片 -->
-        <image src="https://img30.360buyimg.com/jdcms/s300x300_jfs/t1/97540/24/10503/315001/5e1bfc8eE646698bf/e90d958de117cd81.jpg" mode="aspectFill">
+        <image src="{{item.goods_small_logo}}" mode="aspectFill">
         </image>
           <view class="goods_item_right">
-              <view class="goods_title">大头人 datouren 充电感应灯楼道小夜灯led人体感应灯卧室床头婴儿喂奶budasdasdasdasdasdasdsadasd  </view>          
-            <view class="price"><text>￥</text>100.00</view>
+              <view class="goods_title">{{item.goods_name}}</view>          
+            <view class="price"><text>￥</text>{{item.goods_price}}</view>
           </view>
       </navigator>
 
