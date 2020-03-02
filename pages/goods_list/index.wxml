@@ -29,4 +29,8 @@
       </navigator>
 
     </view>
+      <view class="no_more">
+        <text wx:if="{{showMore}}">加载中</text>
+        <text wx:if="{{!showMore}}">没有更多数据了</text>
+      </view>
 </view>
