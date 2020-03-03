@@ -5,8 +5,9 @@
        <view class="search_input">
         <icon type="search" size="20"></icon>
         <!-- bindinput获取input内容的值方法 -->
+        <!-- bindconfirm按下回车键跳转到列表 -->
           <input placeholder="请输入你想要输入的商品" 
-          bindinput="valueInput" value="{{inputValue}}"></input>
+          bindinput="valueInput" value="{{inputValue}}" bindconfirm="handelConfirm"></input>
        </view>
          <!-- 按钮 -->
          <view class="search_rigth" class="search_button" wx:if="{{inputValue}}" bindtap="handleClick">取消</view>
@@ -24,9 +25,9 @@
     <view>搜索历史</view>
     <icon type="clear" size="17"></icon>
 </view>
-<view class="history-lis">
-  <view class="history_item">
-    小米213123
+<view class="history-lis" >
+  <view class="history_item" wx:for="{{localKey}}" wx:key="index">
+    {{item}}
   </view>
 </view>
 </view>
