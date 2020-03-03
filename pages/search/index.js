@@ -22,8 +22,8 @@
     */
    onLoad: function(options) {
      //获取本地数据
-     let arr = wx.getStorageSync('localKey')
-    //  判断arr是否是数据 如果不是就让它等于一个数组
+      let arr = wx.getStorageSync('localKey')
+      //  判断arr是否是数据 如果不是就让它等于一个数组
           if(!Array.isArray(arr)){
             arr=[]
           }
@@ -72,7 +72,7 @@
          const {
            message
          } = res.data
-         console.log(res)
+        //  console.log(res)
          this.setData({
            recommend: message,
            loading: false
@@ -103,6 +103,14 @@
      wx.redirectTo({
        url: "/pages/goods_list/index?keyword=" + this.data.inputValue
      })
+   },
+   //清除历史记录
+   handelreset(){
+     //从本地缓存中移除指定 key
+     wx.removeStorageSync('localKey')
+     //清空页面的数据
+     this.setData({
+       localKey: []
+     })
    }
-   
  })
