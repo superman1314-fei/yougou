@@ -6,7 +6,9 @@
   display: flex;
   justify-content: space-between;
   height: 60rpx;
+  position: relative;
 }
+
 .search_input{
   flex: 1;
   padding: 0 20rpx;
@@ -33,6 +35,23 @@
   text-align: center;
   font-size: 12px;
   margin-left: 20rpx;
+}
+.recommend{
+position: absolute;
+top: 95rpx;
+left: 0;
+width: 100%;
+background: #fff;
+padding: 20rpx;
+height: 50vh;
+border: 1px solid red;
+box-sizing: border-box;
+overflow: auto;
+}
+.recommend navigator{
+  line-height: 2;
+  border-bottom:  1px #ccc solid;
+  font-size: 12px;
 }
 .history-title{
   display: flex;

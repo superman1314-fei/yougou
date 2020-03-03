@@ -4,10 +4,18 @@
      <!-- 输入框 -->
        <view class="search_input">
         <icon type="search" size="20"></icon>
-          <input placeholder="请输入你想要输入的商品">111</input>
+        <!-- bindinput获取input内容的值方法 -->
+          <input placeholder="请输入你想要输入的商品" bindinput="valueInput"></input>
        </view>
          <!-- 按钮 -->
-         <view class="search_rigth" class="search_button">取消</view>
+         <view class="search_rigth" class="search_button" wx:if="{{inputValue}}">取消     </view>
+
+     </view>
+     <!-- 搜索建议 -->
+     <view class="recommend" wx:if="{{recommend.length}}">
+        <navigator url="" wx:for="{{recommend}}" wx:key="index">
+         {{item.goods_name}}
+        </navigator>
      </view>
 </view>
 <!-- 搜索历史 -->
