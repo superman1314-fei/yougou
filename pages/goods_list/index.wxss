@@ -18,7 +18,8 @@
 
 .goods_item {
   display: flex;
-  justify-content: space-between;
+  /* 可以不用给 */
+  justify-content: space-between; 
   padding: 20rpx;
   border: 1px solid #ccc;
 }

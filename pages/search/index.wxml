@@ -1,8 +1,23 @@
 <view class="search_row" >
+<view class="search">
      <view class="search_top">
-        <input placeholder="请输入你想要输入的商品">111</input>
-        <button>取消</button>
+     <!-- 输入框 -->
+       <view class="search_input">
+        <icon type="search" size="20"></icon>
+          <input placeholder="请输入你想要输入的商品">111</input>
+       </view>
+         <!-- 按钮 -->
+         <view class="search_rigth" class="search_button">取消</view>
      </view>
-
-
+</view>
+<!-- 搜索历史 -->
+<view class="history-title">
+    <view>搜索历史</view>
+    <icon type="clear" size="17"></icon>
+</view>
+<view class="history-lis">
+  <view class="history_item">
+    小米213123
+  </view>
+</view>
 </view>

@@ -65,13 +65,7 @@ Page({
         }
         })
   },
-  //小程序回到顶部
-  headTop() {
-    wx.pageScrollTo({
-      scrollTop: 0,
-      duration: 300
-    })
-  },
+
 
 onReachBottom(){
   // 判断开关 请求上一次成功后 再请求后面的数据
@@ -83,6 +77,13 @@ onReachBottom(){
     })
     this.getGoods() //调用请求
   }
+  },
+  //小程序回到顶部
+  headTop() {
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
   },
   //监听回到顶部
   onPageScroll(e) {

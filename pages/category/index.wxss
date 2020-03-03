@@ -13,7 +13,7 @@
     width: 200rpx;
     height: 100%;
     background: #eee;
-    overflow: auto;
+    /* overflow: auto; */
     flex-shrink: 0;
 }
 
@@ -44,7 +44,7 @@
 /* 右边的内容 */
 .right{
     flex: 1;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .category-title{
