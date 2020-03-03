@@ -5,10 +5,11 @@
        <view class="search_input">
         <icon type="search" size="20"></icon>
         <!-- bindinput获取input内容的值方法 -->
-          <input placeholder="请输入你想要输入的商品" bindinput="valueInput"></input>
+          <input placeholder="请输入你想要输入的商品" 
+          bindinput="valueInput" value="{{inputValue}}"></input>
        </view>
          <!-- 按钮 -->
-         <view class="search_rigth" class="search_button" wx:if="{{inputValue}}">取消     </view>
+         <view class="search_rigth" class="search_button" wx:if="{{inputValue}}" bindtap="handleClick">取消</view>
 
      </view>
      <!-- 搜索建议 -->
