@@ -51,7 +51,7 @@
    //封装方法
    getrecommend() {
      //判断如果没有值就就不用发起请求
-     if (!this.data.inputValue) {
+     if (!this.data.inputValue.trim()) {
        this.setData({
          recommend: []
        })

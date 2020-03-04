@@ -1,2 +1,40 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<view class="container">
+  <!-- 轮播图 -->
+  <swiper indicator-dots indicator-color="rgba(255, 255, 255, .3)" indicator-active-color="rgba(255,255,255,1)" class="detail_swiper">
+    <block wx:for="{{banners}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 商品信息 -->
+  <view class="commodity">
+    <view class="price">￥279</view>
+    <view class="commodity_item">
+      <view class="commodity_title">德国进口吉利丁片 鱼胶片明胶片家用布丁果冻粉制作慕斯蛋糕烘焙原料食用明胶粉 替甜5g*10片 1包</view>
+      <view class="commodity_rigth">
+        <view class="iconfont  icon-shoucang"></view>
+        <text>收藏</text>
+      </view>
+    </view>
+    <view class="freight"> 快递： 免运费</view>
+  </view>
+  <!-- 页脚按钮 -->
+  <view class="btns">
+
+
+    <view class="btn-white">
+      <view class="iconfont icon-kefu"></view>
+      <text>联系客服</text>
+    </view>
+    <view class="btn-white">
+      <view class="iconfont icon-gouwuche"></view>
+      <text>购物车</text>
+    </view>
+
+    <view class="btn-color">加入购物车</view>
+    <view class="btn-color">立即购买</view>
+
+  </view>
+</view>

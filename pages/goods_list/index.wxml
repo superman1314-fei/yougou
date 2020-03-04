@@ -21,7 +21,7 @@
   </view>
 <!-- 商品列表 -->
     <view class="list" wx:for="{{goods}}" wx:key="index">
-      <navigator url="" class="goods_item">
+      <navigator url="/pages/goods_detail/index?id={{item.goods_id}}" class="goods_item">
       <!-- 图片 -->
         <image src="{{item.goods_small_logo}}" mode="aspectFill">
         </image>
