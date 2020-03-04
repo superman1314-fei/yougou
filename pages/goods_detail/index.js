@@ -43,12 +43,18 @@ Page({
         })
   },
   handelImage(e){
-    
+    // 图片的当前索引
     const { index } = e.currentTarget.dataset
     wx.previewImage({
         
       current: this.data.picsList[index], // 当前显示图片的http链接
       urls: this.data.picsList // 需要预览的图片http链接列表
+    })
+  },
+  //跳转到购物车
+  handelcat(){
+    wx.switchTab({
+      url: '/pages/cart/index'
     })
   }
 })
