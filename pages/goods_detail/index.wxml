@@ -1,18 +1,18 @@
 <view class="container">
   <!-- 轮播图 -->
   <swiper indicator-dots indicator-color="rgba(255, 255, 255, .3)" indicator-active-color="rgba(255,255,255,1)" class="detail_swiper">
-    <block wx:for="{{banners}}" wx:key="index">
+    <block wx:for="{{detail.pics}}" wx:key="index">
       <swiper-item>
-        <image src="{{item}}" mode="aspectFill"></image>
+        <image src="{{item.pics_big}}" mode="aspectFill"></image>
       </swiper-item>
     </block>
   </swiper>
 
   <!-- 商品信息 -->
   <view class="commodity">
-    <view class="price">￥279</view>
+    <view class="price">￥{{detail.goods_price}}</view>
     <view class="commodity_item">
-      <view class="commodity_title">德国进口吉利丁片 鱼胶片明胶片家用布丁果冻粉制作慕斯蛋糕烘焙原料食用明胶粉 替甜5g*10片 1包</view>
+      <view class="commodity_title">{{detail.goods_name}}</view>
       <view class="commodity_rigth">
         <view class="iconfont  icon-shoucang"></view>
         <text>收藏</text>
@@ -20,10 +20,33 @@
     </view>
     <view class="freight"> 快递： 免运费</view>
   </view>
+  <!-- 商品详细信息的展示 -->
+    <view class="tap">
+      <view class="tap_item {{current===index? 'active':''}}" wx:for="{{['商品介绍','规格参数']}}"
+       wx:key="index"
+       bindtap="handelTap"
+       data-index="{{index}}"
+       >
+        {{item}}
+      </view>
+    
+    </view>
+<!-- 商品介绍 -->
+<rich-text nodes="{{detail.goods_introduce}}" wx:if="{{current===0}}"></rich-text>
+
+<!-- 规格参数 -->
+<view wx:if="{{current===1}}" class="attrs">
+  <view wx:for="{{detail.attrs}}">
+       <text>{{item.attr_name}}</text>
+            <text>{{item.attr_vals}}</text>
+  </view>
+
+</view>
   <!-- 页脚按钮 -->
   <view class="btns">
-
-
+  <view class="contact">
+      <button open-type="contact"></button>
+  </view>
     <view class="btn-white">
       <view class="iconfont icon-kefu"></view>
       <text>联系客服</text>

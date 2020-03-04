@@ -1,4 +1,6 @@
-
+.container{
+ padding-bottom: 100rpx;
+}
 .detail_swiper{
   width: 750rpx;
   height: 750rpx;
@@ -48,13 +50,25 @@ font-size: 13px;
 .btns{
     display: flex;
     justify-content: space-between;
-
     background: #fff;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     box-shadow:  0 -2px 2px #eee;
+
+}
+.contact{
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  left: 0;
+  top: 0;
+overflow: auto;
+    opacity: 0;
+}
+.contact button{
+  height: 100rpx;
 }
 .btns view{
   height: 100rpx;
@@ -82,4 +96,28 @@ font-size: 13px;
 }
 .btn-color:last-child{
     background: red;
+}
+.tap{
+  display: flex;
+    border-top: 10px #eee solid;
+}
+.tap_item{
+     width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+.attrs{
+    padding: 20rpx;
+}
+.attr-item{
+    line-height: 2;
+}
+
+.attr-item text{
+    margin-right: 20rpx;
+} 
+.active{
+  background: red;
+  color: #fff;
 }
