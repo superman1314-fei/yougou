@@ -8,7 +8,9 @@ Page({
   //商品内容
     detail:[],
     //索引
-    current:0
+    current:0,
+    //预览图片
+    picsList:[]
   },
 
   /**
@@ -24,15 +26,29 @@ Page({
      }).then(res=>{
       //  console.log(res)
        const { message} = res.data
+       const picsList = message.pics.map(v=>{
+         return v.pics_big
+       })
        this.setData({
-         detail:message
+         detail:message,
+         picsList
        })
      })
   },
+  //当前索引
   handelTap(e){
     const { index } = e.currentTarget.dataset
         this.setData({
           current : index
         })
+  },
+  handelImage(e){
+    
+    const { index } = e.currentTarget.dataset
+    wx.previewImage({
+        
+      current: this.data.picsList[index], // 当前显示图片的http链接
+      urls: this.data.picsList // 需要预览的图片http链接列表
+    })
   }
 })
