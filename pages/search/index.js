@@ -75,9 +75,11 @@
         //  console.log(res)
          this.setData({
            recommend: message,
+
            loading: false
            
          })
+         console.log(this.data.recommend)
          //判断inputValue是否是最新的值，如果不是重新发送请求
          if( this.data.inputValue!=this.data.listValue){
            this.getrecommend()
@@ -87,10 +89,12 @@
   
 
    },
+   //搜索建议点击外面清空
    handelClick(e){
      const { onlyid } = e.target.dataset
      if (!onlyid){
        this.setData({
+         //清空搜索建议
          recommend: []
        })
      }

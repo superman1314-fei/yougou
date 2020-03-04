@@ -85,7 +85,7 @@ overflow: auto;
   font-size: 12px;
 }
 .btn-white view{
-  padding-top: 10rpx;
+  padding-top: 20rpx;
 }
 .btn-color{
   width: 30%;

@@ -26,8 +26,9 @@
     <icon type="clear" size="17" bindtap="handelreset"></icon>
 </view>
 <view class="history-lis" >
-  <view class="history_item" wx:for="{{localKey}}" wx:key="index">
-    {{item}}
-  </view>
+<navigator class="history_item" wx:for="{{localKey}}" wx:key="index" url="/pages/goods_list/index?keyword={{item}}">
+{{item}}
+</navigator>
+ 
 </view>
 </view>
