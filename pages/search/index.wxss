@@ -1,3 +1,6 @@
+.search_row{
+  height: 100vh;
+}
 .search{
   padding: 20rpx;
   background: #ddd;

@@ -87,6 +87,15 @@
   
 
    },
+   handelClick(e){
+     const { onlyid } = e.target.dataset
+     if (!onlyid){
+       this.setData({
+         recommend: []
+       })
+     }
+     
+   },
    //按下回车键跳转列表页
    handelConfirm(){
     //  let arr = wx.getStorageSync('localKey')

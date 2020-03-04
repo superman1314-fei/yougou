@@ -1,4 +1,4 @@
-<view class="search_row" >
+<view class="search_row" bindtap="handelClick">
 <view class="search">
      <view class="search_top">
      <!-- 输入框 -->
@@ -15,7 +15,7 @@
      </view>
      <!-- 搜索建议 -->
      <view class="recommend" wx:if="{{recommend.length}}">
-        <navigator url="" wx:for="{{recommend}}" wx:key="index">
+        <navigator url="" wx:for="{{recommend}}" wx:key="index" data-onlyId="{{item.goods_id}}">
          {{item.goods_name}}
         </navigator>
      </view>
