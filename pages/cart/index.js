@@ -6,7 +6,11 @@ Page({
    */
   data: {
       //获取地址信息
-      address:{}
+      address:{},
+      //本地存储的数据
+      goods:[],
+      //计算总价格，
+      allPrice:0
   },
 
   /**
@@ -18,8 +22,15 @@ Page({
     })
     
   },
+  onShow(){
+    this.setData({
+      goods:wx.getStorageSync("goods")
+     
+    })
+    this.handleAllPrice()
+  },
+  //点击获取地址信息
   handelGetAddress(){
-
     wx.chooseAddress({
       success:(res) =>{
         this.setData({
@@ -36,6 +47,15 @@ Page({
         wx.setStorageSync("address", this.data.address)
       }
     })
+  },
+  handleAllPrice(){
+      let price = 0
+      this.data.goods.forEach(v=>{
+        price+= v.goods_price * v.number
+      })
+      this.setData({
+        allPrice: price
+      })
   }
 
 })

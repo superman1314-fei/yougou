@@ -58,13 +58,17 @@ Page({
     })
   },
   //加入购物车
+  
   handelAddCat(){
+      //获取本地数据，如果没有就添加空数组
       var goods = wx.getStorageSync("goods") || [];
+      //some如果值相同就返回true 反之就返回false
      const exit= goods.some(v=>{
        const isExit = this.data.detail.goods_id == v.goods_id
        if (isExit){
        
           v.number+=1;
+          //提示
          wx.showToast({
            title: '数量+1',
            icon: 'success'
@@ -73,6 +77,7 @@ Page({
         }
        return isExit
       })
+      //判断如果没有值 就添加一个新的值
       if(!exit){
         goods.unshift({
           goods_img: this.data.detail.goods_small_logo,
@@ -87,7 +92,7 @@ Page({
          
         })
       }
-
+  //把数组存储起来
     wx.setStorageSync("goods", goods)
   
   }

@@ -29,20 +29,20 @@
   <!-- 商品列表 -->
   <view class="goods_list">
     <!-- 循环 -->
-    <view class="goods-item" wx:for="{{5}}" wx:key="index">
+    <view class="goods-item" wx:for="{{goods}}" wx:key="index">
       <icon type="success" color="red"></icon>
-      <image mode="aspectFill" src="https://img20.360buyimg.com/jdcms/s300x300_jfs/t1/32832/14/10144/286015/5cada61dE87d43f00/6570bc721145a5f1.jpg.webp"></image>
+      <image mode="aspectFill" src="{{item.goods_img}}"></image>
       <!-- 列表详细信息 -->
       <view class="goods_list_connent">
-        <view class="goods_list_shop"> 商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品
+        <view class="goods_list_shop"> {{item.goods_name}}
         </view>
         <view class="goods_list_jiage">
           <view class="goods_pric">
-            <text>￥</text>2000
+            <text>￥</text>{{item.goods_price}}
           </view>
           <view class="goods_number">
             <view class="calc_but">-</view>
-            <input value="1"></input>
+            <input value="{{item.number}}"></input>
             <view class="calc_but">+</view>
           </view>
         </view>
@@ -61,7 +61,7 @@
         <view class="allprice_top">
         合计
                  <text>￥</text>
-                 <text>151221</text>
+                 <text>{{allPrice}}</text>
          
         </view>
         <view class="allprice_btm">包含运费</view>
