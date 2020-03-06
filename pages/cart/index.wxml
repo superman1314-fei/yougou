@@ -1,2 +1,61 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="container">
+  <!-- 头部收货人 -->
+  <view class="receiving ">
+    <view class="receiving_title">
+      <view>收货人： 苏</view>
+      <view class="tel">13535337057</view>
+    </view>
+    <view class="receiving_dizhi">
+      收货地址：广东省天河区吉山幼儿园
+    </view>
+    <image src="../../images/cart_border@2x.png"></image>
+
+  </view>
+  <!-- 商店 -->
+  <view class="goods_list_title">
+    <view class="iconfont icon-dianpu"></view>
+    优购生活馆
+  </view>
+  <!-- 商品列表 -->
+  <view class="goods_list">
+    <!-- 循环 -->
+    <view class="goods-item" wx:for="{{5}}">
+      <icon type="success" color="red"></icon>
+      <image mode="aspectFill" src="https://img20.360buyimg.com/jdcms/s300x300_jfs/t1/32832/14/10144/286015/5cada61dE87d43f00/6570bc721145a5f1.jpg.webp"></image>
+      <!-- 列表详细信息 -->
+      <view class="goods_list_connent">
+        <view class="goods_list_shop"> 商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品
+        </view>
+        <view class="goods_list_jiage">
+          <view class="goods_pric">
+            <text>￥</text>2000
+          </view>
+          <view class="goods_number">
+            <view class="calc_but">-</view>
+            <input value="1"></input>
+            <view class="calc_but">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部栏 -->
+  <view class="checkout">
+        <view class="checkout_quanxuan">
+        <icon type="success" color="red"></icon>
+          <text>全选</text>
+        </view>
+        <view class="allprice">
+        
+ 
+        <view class="allprice_top">
+        合计
+                 <text>￥</text>
+                 <text>151221</text>
+         
+        </view>
+        <view class="allprice_btm">包含运费</view>
+      </view>
+      <view class="allprice_btn"> 结算</view>
+  </view>
+</view>
