@@ -31,7 +31,9 @@
     <!-- 循环 -->
     <view class="goods-item" wx:for="{{goods}}" wx:key="index">
       <icon type="success" color="red"></icon>
+      <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
       <image mode="aspectFill" src="{{item.goods_img}}"></image>
+      </navigator>
       <!-- 列表详细信息 -->
       <view class="goods_list_connent">
         <view class="goods_list_shop"> {{item.goods_name}}
@@ -41,9 +43,11 @@
             <text>￥</text>{{item.goods_price}}
           </view>
           <view class="goods_number">
-            <view class="calc_but">-</view>
+            <view class="calc_but" bindtap="handleCalc" data-index="{{index}}"  
+             data-number="{{-1}}">-</view>
             <input value="{{item.number}}"></input>
-            <view class="calc_but">+</view>
+            <view class="calc_but"  bindtap="handleCalc" data-index="{{index}}"
+             data-number="{{1}}">+</view>
           </view>
         </view>
       </view>
