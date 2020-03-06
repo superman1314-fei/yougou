@@ -56,5 +56,39 @@ Page({
     wx.switchTab({
       url: '/pages/cart/index'
     })
+  },
+  //加入购物车
+  handelAddCat(){
+      var goods = wx.getStorageSync("goods") || [];
+     const exit= goods.some(v=>{
+       const isExit = this.data.detail.goods_id == v.goods_id
+       if (isExit){
+       
+          v.number+=1;
+         wx.showToast({
+           title: '数量+1',
+           icon: 'success'
+           
+         })
+        }
+       return isExit
+      })
+      if(!exit){
+        goods.unshift({
+          goods_img: this.data.detail.goods_small_logo,
+          goods_price: this.data.detail.goods_price,
+          goods_name: this.data.detail.goods_name,
+          goods_id: this.data.detail.goods_id,
+          number: 1
+        })
+        wx.showToast({
+          title: '加入成功',
+          icon: 'success'
+         
+        })
+      }
+
+    wx.setStorageSync("goods", goods)
+  
   }
 })
