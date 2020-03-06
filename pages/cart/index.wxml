@@ -1,14 +1,24 @@
 <view class="container">
   <!-- 头部收货人 -->
-  <view class="receiving ">
+  <view class="receiving "   wx:if="{{address.name}}" >
     <view class="receiving_title">
-      <view>收货人： 苏</view>
-      <view class="tel">13535337057</view>
+      <view>收货人： {{address.name}}</view>
+      <view class="tel">{{address.tel}}</view>
     </view>
     <view class="receiving_dizhi">
-      收货地址：广东省天河区吉山幼儿园
+      收货地址：{{address.detall}}
     </view>
     <image src="../../images/cart_border@2x.png"></image>
+
+  </view>
+  <!-- 获取地址信息 -->
+   <view class="receiving " wx:if="{{!address.name}}" bindtap="handelGetAddress">
+    <view class="receiving_title">
+      <view>获取地址信息</view>
+      <view class="tel"></view>
+    </view>
+ 
+    <image src="../../images/cart_border@2x.png" mode="aspectFill"></image>
 
   </view>
   <!-- 商店 -->
@@ -19,7 +29,7 @@
   <!-- 商品列表 -->
   <view class="goods_list">
     <!-- 循环 -->
-    <view class="goods-item" wx:for="{{5}}">
+    <view class="goods-item" wx:for="{{5}}" wx:key="index">
       <icon type="success" color="red"></icon>
       <image mode="aspectFill" src="https://img20.360buyimg.com/jdcms/s300x300_jfs/t1/32832/14/10144/286015/5cada61dE87d43f00/6570bc721145a5f1.jpg.webp"></image>
       <!-- 列表详细信息 -->

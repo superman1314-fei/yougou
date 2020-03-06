@@ -28,6 +28,7 @@
 .receiving image{
   width:750rpx;
    height: 15rpx;
+   display: block;
 }
 .goods_list_title{
   border-top: 20rpx solid #ccc;
