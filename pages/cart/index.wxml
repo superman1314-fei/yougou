@@ -45,7 +45,7 @@
           <view class="goods_number">
             <view class="calc_but" bindtap="handleCalc" data-index="{{index}}"  
              data-number="{{-1}}">-</view>
-            <input value="{{item.number}}"></input>
+            <input value="{{item.number}}" bindblur="blurClick" data-index="{{index}}"></input>
             <view class="calc_but"  bindtap="handleCalc" data-index="{{index}}"
              data-number="{{1}}">+</view>
           </view>

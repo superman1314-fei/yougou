@@ -97,6 +97,22 @@ Page({
     })
     //调用计算总价格
     this.handleAllPrice()
+  },
+  //input框移出事件
+  blurClick(e){
+    //输入框的值
+    let {value} = e.detail
+    const {index} = e.currentTarget.dataset 
+    value = Math.floor(Number(value)) 
+    if (value<1){
+      value=1
+    }
+    this.data.goods[index].number=value
+    console.log(value)
+    //刷新页面
+    this.setData({
+      goods: this.data.goods
+    })
+    this.handleAllPrice()
   }
-
 })
