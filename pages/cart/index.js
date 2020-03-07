@@ -10,7 +10,9 @@ Page({
       //本地存储的数据
       goods:[],
       //计算总价格，
-      allPrice:0
+      allPrice:0,
+      //全选的状态
+    allSelect:true
   },
 
   /**
@@ -28,6 +30,9 @@ Page({
      
     })
     this.handleAllPrice()
+    //全选按钮
+    this.handleAllSelect()
+    
   },
   //点击获取地址信息
   handelGetAddress(){
@@ -132,11 +137,40 @@ Page({
     const {select} = this.data.goods[index];
     //取反
     this.data.goods[index].select = !select;
+ 
     //跟新数据
     this.setData({
-      goods: this.data.goods
+      goods: this.data.goods,
+      
     })
     //重新计算价格
     this.handleAllPrice()
+    //全选功能
+    this.handleAllSelect()
+  },
+  //判断全选
+  handleAllSelect(){
+    //假设全部为true
+    let currentSelect = true
+    //遍历循环只要有一个商品状态是false,select就等于false
+    this.data.goods.forEach(v => {
+      //如果有一个是false 就不再执行下面的代码
+      if (currentSelect === false) {
+        return
+      };
+      //判断单选如果有一个等于false 就全选按钮就变为false
+      if (v.select == false) {
+        currentSelect = false
+      }
+    })
+    //跟新数据
+    this.setData({
+      goods: this.data.goods,
+      //赋值
+      allSelect: currentSelect
+    })
+    //重新计算价格
+    this.handleAllPrice()
+    
   }
 })
