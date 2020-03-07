@@ -54,12 +54,16 @@ Page({
       let price = 0
       // 循环找打number 让他加乘价格
       this.data.goods.forEach(v=>{
-        price+= v.goods_price * v.number
+        if (v.select) {
+          price += v.goods_price * v.number
+        }
+        
       })
     //修改数据
       this.setData({
         allPrice: price
       })
+    
       //重新赋值给本地存储
     wx.setStorageSync("goods", this.data.goods)
   },
@@ -102,17 +106,37 @@ Page({
   blurClick(e){
     //输入框的值
     let {value} = e.detail
+    //索引值
     const {index} = e.currentTarget.dataset 
+    //向下取整
     value = Math.floor(Number(value)) 
+    //判断如果等于负一 就让它等于一
     if (value<1){
       value=1
     }
+    //把value值赋值给number
     this.data.goods[index].number=value
-    console.log(value)
+    
     //刷新页面
     this.setData({
       goods: this.data.goods
     })
+    //重新计算价格
+    this.handleAllPrice()
+  },
+  //点击图标
+  handelSelect(e){
+    //当前的索引
+    const { index } = e.currentTarget.dataset; 
+    //当前的状态
+    const {select} = this.data.goods[index];
+    //取反
+    this.data.goods[index].select = !select;
+    //跟新数据
+    this.setData({
+      goods: this.data.goods
+    })
+    //重新计算价格
     this.handleAllPrice()
   }
 })

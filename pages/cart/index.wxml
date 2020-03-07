@@ -30,7 +30,7 @@
   <view class="goods_list">
     <!-- 循环 -->
     <view class="goods-item" wx:for="{{goods}}" wx:key="index">
-      <icon type="success" color="red"></icon>
+      <icon type="success" color="{{item.select?'red':'gray'}}" bindtap="handelSelect" data-index="{{index}}"></icon>
       <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
       <image mode="aspectFill" src="{{item.goods_img}}"></image>
       </navigator>

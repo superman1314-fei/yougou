@@ -84,7 +84,8 @@ Page({
           goods_price: this.data.detail.goods_price,
           goods_name: this.data.detail.goods_name,
           goods_id: this.data.detail.goods_id,
-          number: 1
+          number: 1,//默认数量1
+          select:true//当前的选中状态
         })
         wx.showToast({
           title: '加入成功',
