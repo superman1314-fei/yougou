@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container pag-bar" >
   <!-- 头部收货人 -->
   <view class="receiving "   wx:if="{{address.name}}" >
     <view class="receiving_title">
@@ -27,7 +27,8 @@
     优购生活馆
   </view>
   <!-- 商品列表 -->
-  <view class="goods_list">
+  <view class="dibu">
+    <view class="goods_list">
     <!-- 循环 -->
     <view class="goods-item" wx:for="{{goods}}" wx:key="index">
       <icon type="success" color="{{item.select?'red':'gray'}}" bindtap="handelSelect" data-index="{{index}}"></icon>
@@ -52,6 +53,9 @@
         </view>
       </view>
     </view>
+  </view>
+  
+  
   </view>
   <!-- 底部栏 -->
   <view class="checkout">

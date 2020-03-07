@@ -1,2 +1,7 @@
 @import "common/style.wxss";
-@import "common/styletow.wxss"
+@import "common/styletow.wxss";
+
+/* 全局tab bar的样式 */
+.pag-bar{
+  padding-bottom: 48px;
+}

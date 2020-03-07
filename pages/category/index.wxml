@@ -1,9 +1,9 @@
-<view class="container">
+<view class="container " >
     <!-- 引入搜索公共组件 -->
     <search/>
     
     <!-- 内容部分 -->
-    <view class="content">
+    <view class="content pag-bar">
         <!-- 左边的菜单 -->
         
         <scroll-view class="left" scroll-y>

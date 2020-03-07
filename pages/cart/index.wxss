@@ -102,7 +102,7 @@ width: 160rpx;
 }
 .checkout{
   position: fixed;
-  bottom: 0;
+  bottom: 48px;
   left: 0;
   width: 750rpx;
   height: 100rpx;
@@ -144,4 +144,7 @@ width: 160rpx;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.dibu{
+  padding-bottom: 48px;
 }
