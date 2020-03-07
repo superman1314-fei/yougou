@@ -172,5 +172,24 @@ Page({
     //重新计算价格
     this.handleAllPrice()
     
+  },
+  //点击全选按钮
+  handelAllCat(){
+    //解构出来
+    const { allSelect } = this.data
+    //循环
+    this.data.goods.forEach(v=>{
+      //把全选的按钮取反
+      v.select = !allSelect
+    })
+    //跟新数据
+    this.setData({
+      goods: this.data.goods,
+      //取反赋值
+      allSelect: !allSelect
+    })
+    //重新计算价格
+    this.handleAllPrice()
   }
+  
 })

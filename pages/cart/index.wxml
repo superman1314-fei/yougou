@@ -56,7 +56,7 @@
   <!-- 底部栏 -->
   <view class="checkout">
         <view class="checkout_quanxuan">
-        <icon type="success" color="{{allSelect?'red':'gray'}}"></icon>
+        <icon type="success" color="{{allSelect?'red':'gray'}}" bindtap="handelAllCat"></icon>
           <text>全选</text>
         </view>
         <view class="allprice">
