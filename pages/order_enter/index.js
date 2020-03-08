@@ -1,4 +1,4 @@
-// pages/cart/index.js
+import request from "../../utils/request.js"
 Page({
 
   /**
@@ -11,7 +11,7 @@ Page({
     goods: [],
     //计算总价格，
     allPrice: 0,
-
+ 
   },
 
   /**
@@ -69,5 +69,62 @@ Page({
 
     //重新赋值给本地存储
     wx.setStorageSync("goods", this.data.goods)
+  },
+  //点击支付判断是否有token值
+  handlePay(){
+    const token = wx.getStorageSync("token")
+    if(!token){
+      wx.navigateTo({
+        url:'/pages/auth/index'
+      })
+    }else{
+      
+      let { allPrice, goods, address} = this.data
+      //创建订单需要的值
+      goods = goods.map(v => {
+        return{
+           goods_id:v.goods_id,
+           goods_number:v.number,
+           goods_price:v.goods_price
+        }
+        
+      }) 
+      //创建订单
+      request({
+        url: '/my/orders/create',
+        method: "POST",
+        header: {
+          Authorization: token
+        },
+        data: {
+          order_price: allPrice,
+          consignee_addr: address.detall + address.name + address.tel,
+          goods
+        }
+      }).then(res => {
+        
+        const { order_number} = res.data.message
+        wx.showToast({
+          title: '订单创建成功',
+          type: "success"
+        })
+        request({
+          url:"/my/orders/req_unifiedorder",
+          method:"POST",
+          header:{
+            Authorization: token
+          },
+          data:{
+            order_number
+          }
+        }).then(res=>{
+          console.log(res)
+          const {pay} =res.data.message
+          wx.requestPayment(pay)
+        })
+      })
+  
+    }
+
   }
 })

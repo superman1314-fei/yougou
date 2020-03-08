@@ -64,5 +64,5 @@
     <view class="order-info">
         合算：￥{{allPrice}}
     </view>
-        <button type="primary" >请支付</button>
+        <button type="primary" bindtap="handlePay">请支付</button>
 </view>

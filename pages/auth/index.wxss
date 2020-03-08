@@ -1,1 +1,8 @@
-/* pages/auth/index.wxss */
+.connent{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.button{
+  width: 750rpx !important;
+}
