@@ -1,2 +1,68 @@
-<!--pages/order_enter/index.wxml-->
-<text>pages/order_enter/index.wxml</text>
+<view class="container pag-bar" >
+  <!-- 头部收货人 -->
+  <view class="receiving "   wx:if="{{address.name}}" >
+    <view class="receiving_title">
+      <view>收货人： {{address.name}}</view>
+      <view class="tel">{{address.tel}}</view>
+    </view>
+    <view class="receiving_dizhi">
+      收货地址：{{address.detall}}
+    </view>
+    <image src="../../images/cart_border@2x.png"></image>
+
+  </view>
+  <!-- 获取地址信息 -->
+   <view class="receiving " wx:if="{{!address.name}}" bindtap="handelGetAddress">
+    <view class="receiving_title">
+      <view>获取地址信息</view>
+      <view class="tel"></view>
+    </view>
+ 
+    <image src="../../images/cart_border@2x.png" mode="aspectFill"></image>
+
+  </view>
+  <!-- 商店 -->
+  <view class="goods_list_title">
+    <view class="iconfont icon-dianpu"></view>
+    优购生活馆
+  </view>
+  <!-- 商品列表 -->
+  <view class="dibu">
+    <view class="goods_list">
+    <!-- 循环 -->
+    <view class="goods-item" wx:for="{{goods}}" wx:key="index" wx:if="{{item.select}}">
+ 
+      <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
+      <image mode="aspectFill" src="{{item.goods_img}}"></image>
+      </navigator>
+      <!-- 列表详细信息 -->
+      <view class="goods_list_connent">
+        <view class="goods_list_shop"> {{item.goods_name}}
+        </view>
+        <view class="goods_list_jiage">
+          <view class="goods_pric">
+            <text>￥</text>{{item.goods_price}}
+            
+          </view>
+            <!-- 新增：数量显示 -->
+                    <view>
+                        数量*{{item.number}}
+                    </view>
+          <view class="goods_number">
+            
+            
+            <view>{{item.number}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  
+  </view>
+      <!-- 新增：合算 -->
+    <view class="order-info">
+        合算：￥{{allPrice}}
+    </view>
+        <button type="primary" >请支付</button>
+</view>

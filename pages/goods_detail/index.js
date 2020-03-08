@@ -25,15 +25,21 @@ Page({
        }
      }).then(res=>{
       //  console.log(res)
-       const { message} = res.data
+       let { message} = res.data
+      //  message.goods_introduce.replace(/\.webp/g, '.jpg')
        const picsList = message.pics.map(v=>{
          return v.pics_big
        })
+      
+       
+      //  console.log(message.goods_introduce)
        this.setData({
          detail:message,
          picsList
        })
+      
      })
+    
   },
   //当前索引
   handelTap(e){

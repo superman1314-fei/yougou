@@ -36,7 +36,8 @@ Page({
       if (typeof this.getTabBar === 'function' &&
         this.getTabBar()) {
         this.getTabBar().setData({
-          selected: 2
+          selected: 2,
+          cartCount: (wx.getStorageSync("goods") || []).length
         })
       }
     
@@ -97,13 +98,25 @@ Page({
           }else{
             //如果按了取消按钮 给number加上1
             this.data.goods[index].number+=1
-            //重新计算总价格
-            this.handleAllPrice()
+          
+          }
+       
+          //修改图标
+          if (typeof this.getTabBar === 'function' &&
+            this.getTabBar()) {
+            this.getTabBar().setData({
+              cartCount: (wx.getStorageSync("goods") || []).length
+              
+            })
+            
           }
           //刷新页面更改goods值
           this.setData({
             goods: this.data.goods
           })
+    
+          //重新计算总价格
+          this.handleAllPrice()
         }
       })
     }

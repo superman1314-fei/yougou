@@ -74,6 +74,8 @@
         </view>
         <view class="allprice_btm">包含运费</view>
       </view>
-      <view class="allprice_btn"> 结算</view>
+      <navigator url="/pages/order_enter/index" class="allprice_btn">
+      <view > 结算</view>
+      </navigator>
   </view>
 </view>
