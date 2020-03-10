@@ -81,6 +81,9 @@ Page({
       
       let { allPrice, goods, address} = this.data
       //创建订单需要的值
+      // let shuju =goods.filter(v=>{
+      //     return v.select
+      // })
       goods = goods.map(v => {
         return{
            goods_id:v.goods_id,
@@ -89,6 +92,7 @@ Page({
         }
         
       }) 
+      // console.log(goods)
       //创建订单
       request({
         url: '/my/orders/create',
@@ -122,6 +126,12 @@ Page({
           const {pay} =res.data.message
           wx.requestPayment(pay)
         })
+
+        //创建成功后把select为ture的 删除
+        const goodsfilter = this.data.goods.filter(v=>{
+          return !v.select
+        })
+        wx.setStorageSync("goods", goodsfilter)
       })
   
     }
