@@ -5,8 +5,15 @@
     <view class="iconfont icon-icon_set_up"></view>
     <!-- 中间内容 -->
     <view class="portrait">
-      <image src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3293144012,2335984271&fm=26&gp=0.jpg" mode="scaleToFill"></image>
-      <text>登录/注册</text>
+     <view class="portrait_title">
+     <open-data type="userAvatarUrl" ></open-data>
+     </view>
+     <view>
+     <view class="user">
+      <open-data type="userNickName" ></open-data>
+     </view>
+     
+     </view>
     </view>
     <!-- 右边图标 -->
     <view class="iconfont icon-dakaihuihua"></view>
@@ -56,12 +63,12 @@
       </view>
     </view>
     <!-- 收货地址 -->
-       <view class="navbar_item_list">
+       <view class="navbar_item_list" bindtap="handelArss">
           <text>收货地址</text>
           <view class="arrow"></view>
         </view>
       <view class="navbar">
-        <view class="navbar_item">
+        <view class="navbar_item" bindtap="handelCall">
           <text>联系客服</text>
           <view>13826707429</view>
         </view>

@@ -1,7 +1,5 @@
 page {
   background: #ccc;
-  /* height: 100%; */
-  /* overflow: auto; */
 }
 
 .container{
@@ -29,14 +27,15 @@ page {
   color: #fff;
 }
 
-.portrait image {
+.portrait_title{
   height: 136rpx;
   width: 136rpx;
   border-radius: 50%;
+  overflow: hidden;
   margin: 0 70rpx;
 }
 
-.portrait text {
+.portrait .user {
   text-align: center;
   padding-top: 20rpx;
 }
